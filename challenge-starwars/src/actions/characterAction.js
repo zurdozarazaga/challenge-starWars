@@ -1,5 +1,5 @@
 import { getCharacter } from "../api/getCharacter";
-import {SET_CHARACTER, REMOVE_CHARACTER}  from "./types";
+import {SET_CHARACTER, REMOVE_CHARACTER, SEARCH_CHARACTER}  from "./types";
 
 // action of setting characters
 const setCharacter = (payload) => {
@@ -12,6 +12,13 @@ const setCharacter = (payload) => {
 const deleteCharacter = (payload) => {
   return {
     type: REMOVE_CHARACTER,
+    payload
+  }
+}
+
+const searchCharacter = (payload) => {
+  return {
+    type: SEARCH_CHARACTER,
     payload
   }
 }
@@ -30,10 +37,15 @@ const getCharacterAction = () => {
 };
 // remove character action
 const removeFromCharacter = (payload) => {
-  console.log('se ejecuto removeFromCharacter');
   return (dispatch) => {
     dispatch(deleteCharacter(payload));
   };
 };
 
-export {setCharacter, getCharacterAction, removeFromCharacter};
+const searchCharacterAction = (payload) => {
+  return (dispatch) => {
+    dispatch(searchCharacter(payload));
+  };
+};
+
+export {setCharacter, getCharacterAction, removeFromCharacter,searchCharacterAction, searchCharacter };

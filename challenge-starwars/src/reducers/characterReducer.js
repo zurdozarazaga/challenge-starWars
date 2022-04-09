@@ -1,10 +1,10 @@
 import {SET_CHARACTER }from '../actions/types';
 import {REMOVE_CHARACTER }from '../actions/types';
+import { SEARCH_CHARACTER } from '../actions/types';
 
 const initialState = {
   characters: [],
 };
-console.log(initialState);
 // reducer of characters
 const characterReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -17,6 +17,13 @@ const characterReducer = (state = initialState, action) => {
       return {
         ...state,
         characters: state.characters.filter(character => character.name !== action.payload),
+      };
+    case SEARCH_CHARACTER:
+      const characterObject = state.characters.find(character => character.name === action.payload);
+      const characters = [characterObject];
+      return {
+        ...state,
+        characters: characters
       };
       
     default:
