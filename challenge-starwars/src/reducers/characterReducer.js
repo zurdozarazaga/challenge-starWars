@@ -1,8 +1,10 @@
-import SET_CHARACTER from '../actions/types';
+import {SET_CHARACTER }from '../actions/types';
+import {REMOVE_CHARACTER }from '../actions/types';
 
 const initialState = {
   characters: [],
 };
+console.log(initialState);
 // reducer of characters
 const characterReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -11,10 +13,12 @@ const characterReducer = (state = initialState, action) => {
         ...state,
         characters: action.payload,
       };
-    // case 'REMOVE_CHARACTER':
-    //   const newState = { ...state };
-    //   delete newState[action.character.id];
-    //   return newState;
+    case REMOVE_CHARACTER:
+      return {
+        ...state,
+        characters: state.characters.filter(character => character.name !== action.payload),
+      };
+      
     default:
       return state;
   }

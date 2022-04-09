@@ -1,6 +1,14 @@
 import React from 'react'
+import { useDispatch } from 'react-redux';
+import { removeFromCharacter } from '../../actions/characterAction';
 
 const Card = ({character}) => {
+  const dispatch = useDispatch()
+  //delete handler
+  const deleteCharacter = (name) => {
+    dispatch(removeFromCharacter(name))
+  };
+
   return (
     <section className="flex justify-between border-2 rounded-lg pl-4 border-gray-300 shadow-md m-3">
       <div className="">
@@ -17,8 +25,10 @@ const Card = ({character}) => {
         </div>
       </div>
       <div>
-        <button className='border rounded-lg  p-1 m-2 mr-6 bg-red-600 text-white'>
-          Eliminar
+        <button 
+          onClick={() => {deleteCharacter(character.name)}}
+          className='border rounded-lg  p-1 m-2 mr-6 bg-red-600 text-white'>
+            Eliminar
         </button>
       </div>
     </section>

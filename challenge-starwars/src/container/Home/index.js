@@ -1,8 +1,7 @@
 import React, {useEffect} from 'react';
-import { useSelector, useDispatch} from 'react-redux';
-import SET_CHARACTER from '../../actions/types';
-import {getCharacter} from '../../api/getCharacter';
-import setCharacter  from '../../actions/characterAction';
+import {useDispatch} from 'react-redux';
+
+import  { getCharacterAction }  from '../../actions/characterAction';
 import CardList from "../../components/CardList";
 
 import SearchForm from "../../components/SearchForm";
@@ -10,22 +9,14 @@ import SearchForm from "../../components/SearchForm";
 
 
 const Home = () => {
-  // const [page, setPage] = useState(1);
+  
   const dispatch = useDispatch();
   
-  const characters = useSelector(state => state.characters);
-  
-
   useEffect(() => {
-    getCharacter(1)
-      .then(res => {
-        console.log('res',res.results);
-        dispatch(setCharacter(res.results));
-      
-      })
+    dispatch(getCharacterAction());
   
     
-  }, [ ]);
+  }, [ dispatch ]);
 
 
 
@@ -35,7 +26,7 @@ const Home = () => {
         <SearchForm />
       </div>
       <div>
-        <CardList characters={characters} />
+        <CardList />
       </div>
       
     </div>
