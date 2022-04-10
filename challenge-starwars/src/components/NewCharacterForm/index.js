@@ -9,11 +9,14 @@ const NewCharacterForm = () => {
   const { register, formState: { errors }, handleSubmit } = useForm();
   const onSubmit = (data) => {
     dispatch(addCharacterAction(data));
-    console.log(data)};
+    console.log(data)
+    setWindowActive(!windowActive);
+  };
 
   const handleClickSesion = () => {
     setWindowActive(!windowActive);
   };
+
   return (
     <div>
       
@@ -41,7 +44,7 @@ const NewCharacterForm = () => {
             placeholder="Nombre del personaje"
             name="name"
           ></input>
-          <span className='text-red-500 ml-1'>
+          <span className='flex justify-between text-red-500 ml-1 '>
             {errors.name?.type === 'required' && "Name is required"}
           </span>
           <label className="ml-4 block"> Altura </label>
@@ -68,18 +71,18 @@ const NewCharacterForm = () => {
             {errors.birth_year?.type === 'required' && "birth year is required"}
           </span>
           <button
-            onClick={handleClickSesion}
+            
             className="md:w-11/12 md:p-1 md:ml-3 md:mt-2 md:mb-2 text-white flex p-1 mt-2  justify-center bg-blue-500 rounded-lg w-full"
           >
             Añadir
           </button>
+        </form>
           <button
             onClick={handleClickSesion}
             className="md:w-11/12 md:p-1 md:ml-3 md:mt-2 md:mb-2 text-white flex p-1 mt-2  justify-center bg-red-500 rounded-lg w-full"
           >
             cerrar
           </button>
-        </form>
       </div>
     </div>
   );
