@@ -1,8 +1,8 @@
-import React from 'react'
-import Card from '../components/CardList/Card';
-import CardList from '../components/CardList';
-import Layout from '../components/Layout';
-import SearchForm from '../components/SearchForm';
+import React from "react";
+import Card from "../components/CardList/Card";
+import CardList from "../components/CardList";
+import Layout from "../components/Layout";
+import SearchForm from "../components/SearchForm";
 
 const Main = () => {
   return (

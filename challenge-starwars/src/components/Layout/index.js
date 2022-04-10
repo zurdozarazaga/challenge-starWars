@@ -1,22 +1,19 @@
-import React from 'react'
-import Main from '../../container/Main';
+import React from "react";
+import Main from "../../container/Main";
 
-import Footer from '../Footer';
-import Header from '../Header';
+import Footer from "../Footer";
+import Header from "../Header";
 
-
-
-const Layout = ( { children} ) => {
+const Layout = ({ children }) => {
   return (
-    <div className='container mx-auto p-2 '>
-      <div className='bg-gray-200'>
+    <div className="container mx-auto p-2 ">
+      <div className="bg-gray-200">
         <Header />
         {children}
-        <Footer />  
-
+        <Footer />
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Layout;

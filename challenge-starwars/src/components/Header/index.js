@@ -1,7 +1,5 @@
 import React from "react";
 
-
-
 const Header = () => {
   return (
     <div className="block md:flex h-full justify-center  text-white  items-center bg-blue-500 rounded ">

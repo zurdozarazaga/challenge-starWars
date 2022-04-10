@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+### Challenge Star Wars
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+App que obtiene los personajes de Star Wars de la API publica de  * [swapi](https://swapi.dev/).
+Los personajes se listan en cards en el cual posee un boton para eliminarlo. Posee un buscador de los personajes que se hayan obtenido previamente. Además se puede crear un personaje nuevo.
 
-## Available Scripts
+## Comenzando 🚀
 
-In the project directory, you can run:
+_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Pre-requisitos 📋
+Deberas tener instalado lo siguiente :
+    * [Node.js](https://nodejs.org/)
+    * [npm](https://www.npmjs.com/)
+    * [Git](https://git-scm.com/)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    
+### Instalación 🔧
 
-### `npm test`
+    * Instala Node.js y npm:
+        ```
+        npm install -g npm
+        npm install -g node
+        ```
+  Clona el repositorio en tu máquina local:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  Una vez dentro del directorio del proyecto, ejecuta:
 
-### `npm run build`
+     *
+        ```
+        npm install
+        
+        ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  Luego para ejecutar el proyecto:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    *
+        ```
+        npm start
+        ```
+  Se te abrirá un ambiente de desarrollo en el navegador en el que podrás interactuar con el proyecto.
+  
+### Configuración 🔧
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Cree un archivo .env en la raiz del proyecto con la siguiente configuración:
+```
+RREACT_APP_STAR_WAR_API = https://swapi.dev/api
+  
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### TECNOLOGIAS 🔧
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Para la realización de este proyecto se basó integramente con la libreria ReactJS
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Para la maquetación y estilos se utilizó Tailwind CSS.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Para el manejo del formulario se utilizó la libreria react-hook-form.
 
-## Learn More
+Para el manejo de estados se utilizó la libreria redux y  react-redux.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Los datos se consumieron desde la API de https://swapi.dev/ 

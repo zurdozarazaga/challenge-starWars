@@ -4,8 +4,8 @@ import { searchCharacterAction } from "../../actions/characterAction";
 
 const SearchForm = () => {
   const dispatch = useDispatch();
-
-  const handleSubmitSearch =(e) => {
+  //handle Search characters
+  const handleSubmitSearch = (e) => {
     e.preventDefault();
     const { target } = e;
     const valueSearch = target.search.value;
@@ -14,7 +14,7 @@ const SearchForm = () => {
   };
 
   return (
-    <div >
+    <div>
       <form className="block p-4 md:flex " onSubmit={handleSubmitSearch}>
         <div>
           <input
@@ -25,8 +25,7 @@ const SearchForm = () => {
           ></input>
         </div>
         <div>
-          <button 
-            className=" w-full p-2 mt-2  md:m-2 md:ml-3 border rounded-lg md:p-1 md:pl-2 md:pr-2 bg-green-800 text-white">
+          <button className=" w-full p-2 mt-2  md:m-2 md:ml-3 border rounded-lg md:p-1 md:pl-2 md:pr-2 bg-green-800 text-white">
             Search
           </button>
         </div>
