@@ -1,6 +1,8 @@
 import {SET_CHARACTER }from '../actions/types';
 import {REMOVE_CHARACTER }from '../actions/types';
 import { SEARCH_CHARACTER } from '../actions/types';
+import { ADD_CHARACTER } from '../actions/types';
+
 
 const initialState = {
   characters: [],
@@ -25,7 +27,11 @@ const characterReducer = (state = initialState, action) => {
         ...state,
         characters: characters
       };
-      
+      case ADD_CHARACTER:
+      return {
+        ...state,
+        characters: [...state.characters, action.payload]
+      };
     default:
       return state;
   }

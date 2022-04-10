@@ -15,7 +15,7 @@ const SearchForm = () => {
 
   return (
     <div >
-      <form className="block p-4 md:flex md:justify-center" onSubmit={handleSubmitSearch}>
+      <form className="block p-4 md:flex " onSubmit={handleSubmitSearch}>
         <div>
           <input
             className=" w-full p-2 border rounded-lg md:p-1 md:pl-2 md:pr-2 md:m-2 md:ml-3 border-gray-200"

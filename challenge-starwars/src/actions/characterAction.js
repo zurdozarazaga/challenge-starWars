@@ -1,5 +1,5 @@
 import { getCharacter } from "../api/getCharacter";
-import {SET_CHARACTER, REMOVE_CHARACTER, SEARCH_CHARACTER}  from "./types";
+import {SET_CHARACTER, REMOVE_CHARACTER, SEARCH_CHARACTER, ADD_CHARACTER}  from "./types";
 
 // action of setting characters
 const setCharacter = (payload) => {
@@ -22,6 +22,13 @@ const searchCharacter = (payload) => {
     payload
   }
 }
+
+const addCharacter = (payload) => {
+  return {
+    type: ADD_CHARACTER,
+    payload
+  }
+};
 
 // action creator of getting characters
 const getCharacterAction = () => {
@@ -48,4 +55,10 @@ const searchCharacterAction = (payload) => {
   };
 };
 
-export {setCharacter, getCharacterAction, removeFromCharacter,searchCharacterAction, searchCharacter };
+const addCharacterAction = (payload) => {
+  return (dispatch) => {
+    dispatch(addCharacter(payload));
+  };
+};
+
+export {setCharacter, getCharacterAction, removeFromCharacter,searchCharacterAction, searchCharacter, addCharacterAction };

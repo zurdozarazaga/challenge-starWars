@@ -3,6 +3,7 @@ import {useDispatch} from 'react-redux';
 
 import  { getCharacterAction }  from '../../actions/characterAction';
 import CardList from "../../components/CardList";
+import NewCharacterForm from '../../components/NewCharacterForm';
 
 import SearchForm from "../../components/SearchForm";
 
@@ -22,8 +23,13 @@ const Home = () => {
 
   return (
     <div className="block ml-6 mr-6 mb-2 bg-gray-100 h-auto ">
-      <div>
+      <div className='block md:flex md:justify-between'>
+        <div>
         <SearchForm />
+        </div>
+        <div className='w-full md:p-2 md:w-32 md:mr-4 mt-3'>
+        <NewCharacterForm />
+        </div>
       </div>
       <div>
         <CardList />
