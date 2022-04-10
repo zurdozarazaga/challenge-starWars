@@ -1,27 +1,31 @@
 import React, {useEffect} from 'react';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 
 import  { getCharacterAction }  from '../../actions/characterAction';
 import CardList from "../../components/CardList";
 import NewCharacterForm from '../../components/NewCharacterForm';
 
 import SearchForm from "../../components/SearchForm";
+import Spinner from '../../components/Spinner';
 
 
 
 const Home = () => {
   
+  const loading = useSelector(state => state.loading);
+  const error = useSelector(state => state.error);
   const dispatch = useDispatch();
-  
+  console.log(loading)
+
   useEffect(() => {
-    dispatch(getCharacterAction());
-  
-    
+    dispatch(getCharacterAction(1));
   }, [ dispatch ]);
 
 
 
   return (
+    <>
+    {error}<div>{error.message}</div> 
     <div className="block ml-6 mr-6 mb-2 bg-gray-100 h-auto ">
       <div className='block md:flex md:justify-between'>
         <div>
@@ -31,11 +35,13 @@ const Home = () => {
         <NewCharacterForm />
         </div>
       </div>
+      { loading && <Spinner />}
       <div>
         <CardList />
       </div>
       
     </div>
+    </>
   );
 };
 

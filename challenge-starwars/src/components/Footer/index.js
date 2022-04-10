@@ -7,7 +7,7 @@ const Footer = () => {
         Copyrigth 2022 All register{" "}
       </div>
       <div className=" flex justify-center mt-1 md:mr-8">
-        Squad Arquitectura Empresarial
+        Star Wars Challenge
       </div>
     </div>
   );

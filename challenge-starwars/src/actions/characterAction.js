@@ -1,5 +1,5 @@
 import { getCharacter } from "../api/getCharacter";
-import {SET_CHARACTER, REMOVE_CHARACTER, SEARCH_CHARACTER, ADD_CHARACTER}  from "./types";
+import {SET_CHARACTER, REMOVE_CHARACTER, SEARCH_CHARACTER, ADD_CHARACTER, TOGGLE_LOADING, SET_ERROR}  from "./types";
 
 // action of setting characters
 const setCharacter = (payload) => {
@@ -30,16 +30,32 @@ const addCharacter = (payload) => {
   }
 };
 
+const toggleLoading = () => {
+  return {
+    type: TOGGLE_LOADING,
+  }
+};
+
+export const setError = (payload) => ({
+  type: SET_ERROR,
+  payload,
+});
+
+
 // action creator of getting characters
-const getCharacterAction = () => {
+const getCharacterAction = (page) => {
   return (dispatch) => {
-    getCharacter(1)
-      .then(res => {
-        dispatch(setCharacter(res.results));
-      
-      })
-    
-    
+    try{
+      dispatch(toggleLoading());
+      getCharacter(page)
+        .then(res => {
+          dispatch(setCharacter(res.results));
+          dispatch(toggleLoading()); 
+        })
+    }catch(err){
+      dispatch(setError({ message: 'Ocurrió un error' }));
+      console.log(err);
+    }
   }
 };
 // remove character action
@@ -61,4 +77,5 @@ const addCharacterAction = (payload) => {
   };
 };
 
-export {setCharacter, getCharacterAction, removeFromCharacter,searchCharacterAction, searchCharacter, addCharacterAction };
+export {setCharacter, getCharacterAction, removeFromCharacter,searchCharacterAction, searchCharacter,
+        addCharacterAction, toggleLoading };

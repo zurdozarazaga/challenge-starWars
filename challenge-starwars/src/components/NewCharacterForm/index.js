@@ -58,7 +58,7 @@ const NewCharacterForm = () => {
           <span className='text-red-500 ml-1'>
             {errors.height?.type === 'required' && "Height is required"}
           </span>
-          <label className="ml-4 block"> Cumpleaños </label>
+          <label className="ml-4 block"> Año </label>
           <input
             {...register('birth_year', { required: true })}
             className="md:input   md:w-11/12 w-full md:ml-3 md:mt-2 md:mb-2 p-1 mb-2 border border-solid  border-gray-300 rounded-lg"
