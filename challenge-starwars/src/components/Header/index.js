@@ -14,7 +14,7 @@ const Header = () => {
           <img
             src="https://firebasestorage.googleapis.com/v0/b/portfolio-347820.appspot.com/o/logo%2F737931.svg?alt=media&token=d9411429-7d5b-400d-bc90-d863794adeb5"
             alt="logo"
-            className="  flex  h-14 w-14 rounded-md mt-2 mb-2 ml-4"
+            className="  flex  h-14 w-14 rounded-md mt-2 mb-2 ml-4 md:ml-12"
             onClick={handleClickHome}
           ></img>
         </button>
@@ -24,7 +24,7 @@ const Header = () => {
         <img
             src="https://firebasestorage.googleapis.com/v0/b/portfolio-347820.appspot.com/o/challengeStarWars%2FstarWarsLogo.jpg?alt=media&token=665119fd-ad3b-4088-91bc-641974e5dbb6"
             alt="logo"
-            className="  flex  h-14 w-20 rounded-md mt-2 mb-2 md:mr-6 mr-2"
+            className="  flex  h-14 w-20 rounded-md mt-2 mb-2 md:mr-12 mr-2"
             onClick={handleClickHome}
           ></img>
         </button>
