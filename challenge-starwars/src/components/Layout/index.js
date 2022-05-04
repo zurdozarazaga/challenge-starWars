@@ -6,8 +6,8 @@ import Header from "../Header";
 
 const Layout = ({ children }) => {
   return (
-    <div className="container mx-auto p-2 ">
-      <div className="bg-gray-200">
+    <div className="container mx-auto p-2 bg-hero-pattern  ">
+      <div className="">
         <Header />
         {children}
         <Footer />

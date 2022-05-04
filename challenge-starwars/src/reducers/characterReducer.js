@@ -17,7 +17,7 @@ const characterReducer = (state = initialState, action) => {
         ...state,
         characters: action.payload,
       };
-      // remove characters
+    // remove characters
     case REMOVE_CHARACTER:
       return {
         ...state,
@@ -25,36 +25,38 @@ const characterReducer = (state = initialState, action) => {
           (character) => character.name !== action.payload
         ),
       };
-      // search characters
+    // search characters
     case SEARCH_CHARACTER:
-      const characterObject = state.characters.find(
-        (character) => character.name === action.payload
-      );
-      const characters = [characterObject];
-      if (characters[0] === undefined) {
-        return {
-          ...state,
-          characters: [],
-        };
-      } else {
-        return {
-          ...state,
-          characters: characters,
-        };
+      const characterSearch = action.payload.toLowerCase();
+      for (let character of state.characters) {
+        if (character.name.toLowerCase().includes(characterSearch)) {
+          return {
+            ...state,
+            characters: state.characters.filter((character) =>
+              character.name.toLowerCase().includes(characterSearch)
+            ),
+          };
+        } else {
+          return {
+            ...state,
+            characters: ['no se encontro resultado'],
+          };
+        }
       }
-      // add characters
+      break;
+    // add characters
     case ADD_CHARACTER:
       return {
         ...state,
         characters: [...state.characters, action.payload],
       };
-      // toggle loading
+    // toggle loading
     case TOGGLE_LOADING:
       return {
         ...state,
         loading: !state.loading,
       };
-      // set error
+    // set error
     case SET_ERROR:
       return { ...state, error: action.payload.message };
     default:

@@ -13,17 +13,22 @@ const Home = () => {
   const loading = useSelector((state) => state.loading);
   // state of error from state of redux
   const error = useSelector((state) => state.error);
+  const characters = useSelector((state) => state.characters);
   const dispatch = useDispatch();
 
   useEffect(() => {
+    console.log("useEffect Home");
     dispatch(getCharacterAction(1));
   }, [dispatch]);
+  console.log('home')
+  console.log('characters.length', characters.length)
+  
 
   return (
     <>
       {error}
       <div>{error.message}</div>
-      <div className="block ml-6 mr-6 mb-2 bg-gray-100 h-auto ">
+      <div className="block ml-6 mr-6 mb-2  h-auto ">
         <div className="block md:flex md:justify-between">
           <div>
             <SearchForm />
@@ -34,7 +39,7 @@ const Home = () => {
         </div>
         {loading && <Spinner />}
         <div>
-          <CardList />
+          {loading === false && <CardList />}
         </div>
       </div>
     </>
